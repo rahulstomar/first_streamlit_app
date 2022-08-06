@@ -16,7 +16,7 @@ streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 
 # want to see names in picklist
-my_fruit_list.set_index('Fruit')
+my_fruit_list = my_fruit_list.set_index('Fruit')
 
 # put some multiselect for user to pick the fruits from the list
 streamlit.multiselect('Picked some fruit:', list(my_fruit_list.index))
