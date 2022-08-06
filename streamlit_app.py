@@ -15,8 +15,12 @@ streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 # import file from S3 bucket - fruit_macros.txt
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 
-# show dataframe in streamlit app
-streamlit.dataframe(my_fruit_list)
+# want to see names in picklist
+my_fruit_list.set_index('Fruit')
 
 # put some multiselect for user to pick the fruits from the list
 streamlit.multiselect('Picked some fruit:', list(my_fruit_list.index))
+
+# show dataframe in streamlit app
+streamlit.dataframe(my_fruit_list)
+
