@@ -29,8 +29,13 @@ streamlit.dataframe(fruits_to_show)
 streamlit.header('Fruityvice Fruit Advice!')
 
 import requests
+
 BASE_URL = "https://fruityvice.com/api/fruit/"
-fruityvice_response = requests.get(BASE_URL + "kiwi")
+# Get input from user for fruit
+fruit_choice = streamlit.text_input("What fruit would you like the information about?",'kiwi')
+streamlit.write('Your choice is ', fruit_choice)
+
+fruityvice_response = requests.get(BASE_URL + fruit_choice)
 # streamlit.text(fruityvice_response.json())  # shows only json data
 
 # normalize json data using python
