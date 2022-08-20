@@ -43,3 +43,6 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 
 # output json normalized data as table
 streamlit.dataframe(fruityvice_normalized)
+
+# snowflake python connector
+import snowflake.connector
